@@ -1,6 +1,4 @@
-.App {
- 
-}
+
 
 .App-wrapper {
   display: grid;
@@ -15,42 +13,7 @@
   
   
 }
-.header img {
-  width: 150px;
-}
 
 
-.header {
-  background: black;
-  grid-area: h;
-}
-
-.nav {
-  background-color: brown;
-  grid-area: n;
-  text-align: center;
-  
-}
-
-.nav-item{
-  margin-top: 20px;
-}
-.nav-item a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.content {
-  background-color: chocolate;
-  grid-area: c;
-}
-
-.content img {
-  width: 1200px;
-  margin: 0 auto;
-  
-}
 
 

@@ -1,0 +1,11 @@
+.content {
+    background-color: chocolate;
+    grid-area: c;
+  }
+  
+  .content img {
+    width: 1000px;
+    
+  }
+  
+  
