@@ -1,10 +1,10 @@
 import React from 'react';
 import MyPosts from '../MyPosts/MyPosts';
-import './Profile.css'
+import P from './Profile.module.css'
 
 function Profile () {
     return (
-        <div className='content'>
+        <div >
             <div>
               <img src='https://i.ytimg.com/vi/qBNi4PlyPcQ/maxresdefault.jpg'/>
             </div>

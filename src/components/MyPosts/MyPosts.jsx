@@ -1,5 +1,4 @@
 import React from 'react';
-import i from './MyPost.module.css';
 import Post from './Post/Post';
 
 
@@ -13,8 +12,8 @@ const MyPosts =  () => {
                   </div>
 
                   <div>
-                    <Post message='I know props' count='15'/>
-                    <Post message='Good,bro' count='20'/>
+                    <Post message='I know props' count='15' />
+                    <Post message='Good,bro' count='20' />
                     
                   </div>
                           
