@@ -2,8 +2,11 @@
 
 const News = (props) => {
     return (
-         <div>
-             News
+         <div className='News'>
+             <h2>About live Style </h2>
+             
+
+
          </div>   
     )
 }
