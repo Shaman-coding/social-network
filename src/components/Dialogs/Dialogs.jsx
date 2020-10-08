@@ -2,32 +2,42 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import P from './Dialogs.module.css';
 
+const Friendly = (props) => {
+    return (
+        <div  className={P.FriendsItem + " " + P.active}>
+            <NavLink to={'/Friends/ ' + props.id}> {props.name}</NavLink>  
+        </div>
+    )
+    
+}
+
+const Message = (props) => {
+    return (
+        <div className={P.messageItem}>{props.message}</div>
+    )
+}
+
 const Dialogs = (props) => {
     return (
         <div className={P.Dialogs}>
            <div className={P.Friend}>
-                <NavLink to='/Kirill' className={P.FriendsItem + " " + P.active}>
-                    Kirill
-                </NavLink>
-                <div className={P.FriendsItem}>
-                    Dasha
-                </div>
-                <div className={P.FriendsItem}>
-                    Maxim
-                </div>
-                <div className={P.FriendsItem}>
-                    Oleg
-                </div>
-                <NavLink to='/Pasha' >
-                    Pasha
-                </NavLink>
+
+               <Friendly name='Kirill' id='1' />
+               <Friendly name='Dasha' id='2' />
+               <Friendly name='Maxim' id='3' />
+               <Friendly name='Oleg' id='4' />
+               <Friendly name='Pasha' id='5' />               
            </div>
            <div className='message'>
-               <div className={P.messageItem}>Hey,bro</div>
-               <div className={P.messageItem}>i'm good,you ?</div>
-               <div className={P.messageItem}>Nice,bro</div>
-               <div className={P.messageItem}>oo,men </div>
-               <div className={P.messageItem}>i too  </div>
+               <Message message='Hey,bro'/>
+               <Message message="i'm good,you ?"/>
+               <Message message='Nice,bro'/>
+               <Message message='oo,men'/>
+               <Message message='i too'/>
+               <Message message='Eeeeeee'/>
+                <Message message='i do it'/>
+
+              
            </div>
            
         </div>

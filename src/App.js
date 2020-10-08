@@ -20,11 +20,11 @@ function App (props) {
           <Navbar/>
                
           <div className='app-wrapper-content'>
-            <Route path='/dialogs' component={Dialogs}/>
-            <Route path='/profile' component={Profile}/>
-            <Route path='/News' component={News}/>
-            <Route path='/Music' component={Music}/>
-            <Route path='/Settings' component={Settings}/>
+            <Route exact path='/dialogs' component={Dialogs}/>
+            <Route exact path='/profile' component={Profile}/>
+            <Route exact path='/News' component={News}/>
+            <Route exact path='/Music' component={Music}/>
+            <Route exact path='/Settings' component={Settings}/>
            
           </div>
           
