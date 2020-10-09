@@ -11,6 +11,31 @@ const Friendly = (props) => {
     
 }
 
+
+let FriendsData = [
+    
+        {id:1, name: 'Kirill'},
+        {id:2, name: 'Dasha'},
+        {id:3, name: 'Maxim'},
+        {id:4, name: 'Oleg'},
+        {id:5, name: 'Pasha'}
+
+    
+];
+
+let MessageDate = [
+    {id:1, message:'Hey,bro'},
+    {id:2, message:"i'm good,you ?"},
+    {id:3, message:'Nice,bro'},
+    {id:4, message:'oo,men'},
+    {id:5, message:'i too'},
+    {id:6, message:'Eeeeeee'},
+    {id:7, message:'i do it'}
+];
+
+
+
+
 const Message = (props) => {
     return (
         <div className={P.messageItem}>{props.message}</div>
@@ -22,20 +47,20 @@ const Dialogs = (props) => {
         <div className={P.Dialogs}>
            <div className={P.Friend}>
 
-               <Friendly name='Kirill' id='1' />
-               <Friendly name='Dasha' id='2' />
-               <Friendly name='Maxim' id='3' />
-               <Friendly name='Oleg' id='4' />
-               <Friendly name='Pasha' id='5' />               
+               <Friendly name={FriendsData[0].name} id={FriendsData[0].id} />
+               <Friendly name={FriendsData[1].name} id={FriendsData[1].id} />
+               <Friendly name={FriendsData[2].name} id={FriendsData[2].id} />
+               <Friendly name={FriendsData[3].name} id={FriendsData[3].id} />
+               <Friendly name={FriendsData[4].name} id={FriendsData[4].id} />               
            </div>
            <div className='message'>
-               <Message message='Hey,bro'/>
-               <Message message="i'm good,you ?"/>
-               <Message message='Nice,bro'/>
-               <Message message='oo,men'/>
-               <Message message='i too'/>
-               <Message message='Eeeeeee'/>
-                <Message message='i do it'/>
+               <Message message={MessageDate[0].message}/>
+               <Message message={MessageDate[1].message}/>
+               <Message message={MessageDate[2].message}/>
+               <Message message={MessageDate[3].message}/>
+               <Message message={MessageDate[4].message}/>
+               <Message message={MessageDate[5].message}/>
+               <Message message={MessageDate[6].message}/>
 
               
            </div>

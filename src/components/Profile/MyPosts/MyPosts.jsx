@@ -3,6 +3,12 @@ import Post from './Post/Post';
 import P from './MyPost.module.css'
 
 
+
+let postMessage = [
+  {id:1, message: 'I know props', count: 17},
+  {id:2, message: 'Good,bro', count: 28}
+] 
+
 const MyPosts =  (props) => {
     return(
         <div className={P.post}>
@@ -19,8 +25,8 @@ const MyPosts =  (props) => {
                 </div>
 
                   <div>
-                    <Post message='I know props' count='15' />
-                    <Post message='Good,bro' count='20' />
+                    <Post message={postMessage[0].message} count={postMessage[0].count} />
+                    <Post message={postMessage[1].message} count={postMessage[1].count} />
                     
                   </div>
                           
