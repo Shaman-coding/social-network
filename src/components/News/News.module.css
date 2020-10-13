@@ -1,0 +1,24 @@
+.title {
+    text-align: center;
+}
+
+
+.NewsPost {
+    display: grid;
+    grid-template-columns: 1fr ;
+    text-align: center;
+    margin-top: 30px;
+    padding: 50px;
+    
+    
+}
+
+.news {
+    font-size: 30px;
+    color: white;
+    margin: 20px;
+}
+
+.photo img {
+    width: 600px;
+}
