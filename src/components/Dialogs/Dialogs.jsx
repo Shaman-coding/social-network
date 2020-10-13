@@ -8,7 +8,14 @@ const Friendly = (props) => {
             <NavLink to={'/Friends/ ' + props.id}> {props.name}</NavLink>  
         </div>
     )
-    
+   
+}
+
+
+const Message = (props) => {
+    return (
+        <div className={P.messageItem}>{props.message}</div>
+    )
 }
 
 
@@ -35,34 +42,24 @@ let MessageDate = [
 
 
 
+let frendlyMap = FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
 
-const Message = (props) => {
-    return (
-        <div className={P.messageItem}>{props.message}</div>
-    )
-}
+let messgeDate = MessageDate.map(m => <Message message={m.message} id={m.id}/>)
+
+
+
+
 
 const Dialogs = (props) => {
     return (
         <div className={P.Dialogs}>
            <div className={P.Friend}>
 
-               <Friendly name={FriendsData[0].name} id={FriendsData[0].id} />
-               <Friendly name={FriendsData[1].name} id={FriendsData[1].id} />
-               <Friendly name={FriendsData[2].name} id={FriendsData[2].id} />
-               <Friendly name={FriendsData[3].name} id={FriendsData[3].id} />
-               <Friendly name={FriendsData[4].name} id={FriendsData[4].id} />               
+               { frendlyMap }             
            </div>
            <div className='message'>
-               <Message message={MessageDate[0].message}/>
-               <Message message={MessageDate[1].message}/>
-               <Message message={MessageDate[2].message}/>
-               <Message message={MessageDate[3].message}/>
-               <Message message={MessageDate[4].message}/>
-               <Message message={MessageDate[5].message}/>
-               <Message message={MessageDate[6].message}/>
-
-              
+               { messgeDate }
+            
            </div>
            
         </div>

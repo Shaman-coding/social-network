@@ -4,10 +4,14 @@ import P from './MyPost.module.css'
 
 
 
-let postMessage = [
+let postsMessage = [
   {id:1, message: 'I know props', count: 17},
   {id:2, message: 'Good,bro', count: 28}
-] 
+]
+
+
+let postElement = postsMessage.map(p => <Post message={p.message} count={p.count} id={p.id}/>)
+
 
 const MyPosts =  (props) => {
     return(
@@ -25,8 +29,7 @@ const MyPosts =  (props) => {
                 </div>
 
                   <div>
-                    <Post message={postMessage[0].message} count={postMessage[0].count} />
-                    <Post message={postMessage[1].message} count={postMessage[1].count} />
+                    {postElement}
                     
                   </div>
                           
