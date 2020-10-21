@@ -1,8 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
+import SiteBar from './SiteBar/SiteBar';
 
-function Navbar () {
+
+
+
+function Navbar (props) {
+  
+  let site = props.State.friend.map(s => <SiteBar name={s.name} />)  
+
     return (
         <nav className={s.nav}>
             <div className={s.item}>
@@ -23,7 +30,27 @@ function Navbar () {
             <div className={s.item}>
               <NavLink to='/Settings' activeClassName={s.active}>Settings</NavLink>
             </div>
+
+
+
+           <div className={s.siteNav}>
+
+              <div className={s.blockTitle}>
+                <h3 className={s.title}>Friends</h3>
+              </div>
+
+              <div className={s.site}>
+                {site}
+              </div>
+
+              
+           </div>
        </nav>
+
+       
+
+
+      
     )
 }
 

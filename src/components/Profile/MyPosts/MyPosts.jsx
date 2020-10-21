@@ -4,26 +4,30 @@ import P from './MyPost.module.css'
 
 
 
-let postsMessage = [
-  {id:1, message: 'I know props', count: 17},
-  {id:2, message: 'Good,bro', count: 28}
-]
 
-
-let postElement = postsMessage.map(p => <Post message={p.message} count={p.count} id={p.id}/>)
 
 
 const MyPosts =  (props) => {
+
+
+  let postElement = props.posts.map(p => <Post message={p.message} count={p.count} id={p.id}/>)
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  }
     return(
         <div className={P.post}>
               <h3>My posts</h3>  
                 <div>
                     <div>
-                      <textarea></textarea>
+                      <textarea ref={newPostElement}></textarea>
                     </div>
 
                     <div>
-                      <button type='submit'>Send</button>
+                      <button onClick={addPost}>Send</button>
                     </div>
                    
                 </div>
