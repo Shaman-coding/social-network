@@ -14,6 +14,7 @@ import Settings from './components/Settings/Settings';
 
 function App (props) {
   
+ 
   
   return (
 
@@ -22,8 +23,8 @@ function App (props) {
             <Navbar State={props.State.siteBar}/>
                 
             <div className='app-wrapper-content'>
-              <Route  path= '/dialogs'  render = { () => <Dialogs State={props.State.DialogsPage} /> }/>
-              <Route  path= '/profile'  render = { () => <Profile State={props.State.MessagePage}/>}/>
+              <Route  path= '/dialogs'  render = { () => <Dialogs State={props.State.DialogsPage}  addNewMessage={props.addNewMessage}/> }/>
+              <Route  path= '/profile'  render = { () => <Profile State={props.State.MessagePage} addPost={props.addPost}/>}/>
               <Route  path= '/News'     render = { () => <News />}/>
               <Route  path= '/Music'    render = { () => <Music />}/>
               <Route  path= '/Settings' render = { () => <Settings />}/>

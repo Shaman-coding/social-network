@@ -2,11 +2,6 @@ import React from 'react';
 import Post from './Post/Post';
 import P from './MyPost.module.css'
 
-
-
-
-
-
 const MyPosts =  (props) => {
 
 
@@ -15,8 +10,10 @@ const MyPosts =  (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
+    
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
+    
   }
     return(
         <div className={P.post}>
@@ -42,3 +39,8 @@ const MyPosts =  (props) => {
 }
 
 export default MyPosts;
+
+
+
+
+

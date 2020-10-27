@@ -1,3 +1,4 @@
+import  {RenderEntireTree} from '../render';
 
 let State = {
 
@@ -37,6 +38,27 @@ let State = {
              
          ]
      }
+}
+
+
+
+export let addNewMessage = (messages) => {
+    let newMess = {
+        id:8,
+        message: messages
+    };
+    State.DialogsPage.MessageDate.push(newMess);
+    RenderEntireTree(State);
+}
+
+export let addPost =  (postMessage) => {
+    let newPost = {
+        id: 3,
+        message:postMessage,
+        count: 0
+    };
+    State.MessagePage.posts.push(newPost);
+    RenderEntireTree(State);
 }
 
 export default State;

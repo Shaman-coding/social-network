@@ -1,21 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { RenderEntireTree } from './render';
 import State from './Redux/state';
-import {BrowserRouter} from 'react-router-dom';
 
 
 
-ReactDOM.render(
-  <BrowserRouter>
-    
-      <App State={State}/>
-    
-  </BrowserRouter>,document.getElementById('root')
- 
-);
+RenderEntireTree(State);
 
 
 

@@ -8,11 +8,13 @@ import Message from './Message/Message';
 
 const Dialogs = (props) => {
 
-   let newAddMessage = React.createRef(); // Создаю ссылку для объекта 
+
+
+    let newAddMessage = React.createRef();  /* Создаю ссылку для объекта  */
     
-   let addMessage = () => { //Создаю функцию 
-        let text = newAddMessage.current.value; // считывает значение  которое было введено пользователем 
-        alert(text) // выводит в alert техт 
+   let addMessage = () => { /* Создаю функцию  */
+        let text = newAddMessage.current.value;  /* считывает значение  которое было введено пользователем  */
+        props.addNewMessage(text) /*  выводит в alert техт  */
    }
     
     let frendlyMap = props.State.FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
@@ -33,8 +35,8 @@ const Dialogs = (props) => {
            </div>
 
             <div className={P.addMessage}>
-                <textarea ref={newAddMessage}></textarea> // Делаю ссылку textarea
-                <button onClick={addMessage}>Send</button> // При нажатии на кнопку вызываю функцию = addMessage
+                <textarea ref={newAddMessage}></textarea>  {/* Делаю ссылку textarea */}
+                <button onClick={addMessage}>Send</button> {/* При нажатии на кнопку вызываю функцию = addMessage */}
             </div>
            
         </div>
