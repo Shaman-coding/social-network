@@ -1,9 +1,6 @@
 import DialogsReduser from "./DialogsReduser";
 import MessageReduser from "./MessageReduser";
 
-const ADD_POST_ACTION = "ADD-POST";
-const UPDATE_NEW_POST_TEXT_ACTION = "UPDATE-NEW-POST-TEXT";
-const ADD_NEW_MESSAGE_ACTION = "ADD-NEW-MESSAGE";
 
 
 
@@ -71,9 +68,8 @@ let Store = {
 }
 
 
-export let addPostActionCreator = () => ({type: ADD_POST_ACTION})
-export let UpdateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT_ACTION, newText: text})
-export let AddNewMessageAction = (text) => ({type: ADD_NEW_MESSAGE_ACTION, messages: text})
+
+
 
 
 export default Store;

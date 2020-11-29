@@ -1,8 +1,8 @@
 import React from 'react';
-import { AddNewMessageAction } from '../../Redux/state';
 import P from './Dialogs.module.css';
 import Friendly from './Friendly/Friendly';
 import Message from './Message/Message';
+import {addPostActionCreator} from '../../Redux/DialogsReduser';
 
 
 
@@ -13,9 +13,9 @@ const Dialogs = (props) => {
     
    let addMessage = () => { /* Создаю функцию  */
         let text = newAddMessage.current.value;  /* считывает значение  которое было введено пользователем  */
-        props.dispatch(ADD_NEW_MESSAGE_ACTION(text) ) //text
+        props.dispatch(addPostActionCreator(text) ) //text
    }
-    
+   //addPostActionCreator
     let frendlyMap = props.State.FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
     
     let messageDate = props.State.MessageDate.map(m => <Message message={m.message} id={m.id}/>)

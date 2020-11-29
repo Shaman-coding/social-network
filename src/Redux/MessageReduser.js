@@ -12,5 +12,5 @@ const MessageReduser = (state, action) => {
 
     return state;
 }
-
+export let AddNewMessageAction = (text) => ({type: ADD_NEW_MESSAGE_ACTION, messages: text})
 export default MessageReduser;

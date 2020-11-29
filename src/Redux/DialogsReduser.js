@@ -21,7 +21,8 @@ const UPDATE_NEW_POST_TEXT_ACTION = "UPDATE-NEW-POST-TEXT";
     return state;
 
 }
-
+export let addPostActionCreator = () => ({type: ADD_POST_ACTION})
+export let UpdateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT_ACTION, newText: text})
 
 export default DialogsReduser;
 
