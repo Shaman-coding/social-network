@@ -10,12 +10,9 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 
-
-
 function App (props) {
   
- 
-  
+
   return (
 
         <div className="App-wrapper">
@@ -23,13 +20,15 @@ function App (props) {
             <Navbar State={props.State.siteBar}/>
                 
             <div className='app-wrapper-content'>
-              <Route  path= '/dialogs'  render = { () => <Dialogs State={props.State.DialogsPage}  addNewMessage={props.addNewMessage}/> }/>
-              <Route  path= '/profile'  render = { () => <Profile State={props.State.MessagePage} addPost={props.addPost}/>}/>
+              <Route  path= '/dialogs'  render = { () => <Dialogs State={props.State.DialogsPage} dispatch={props.dispatch}   /> }/>
+              <Route  path= '/profile'  render = { () => <Profile dispatch={props.dispatch} MessagePage={props.State.MessagePage}  />}/>
               <Route  path= '/News'     render = { () => <News />}/>
               <Route  path= '/Music'    render = { () => <Music />}/>
               <Route  path= '/Settings' render = { () => <Settings />}/>
             
             </div>
+
+            
           
         </div>
    

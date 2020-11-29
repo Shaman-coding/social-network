@@ -3,16 +3,13 @@ import MyPosts from './MyPosts/MyPosts';
 import P from './Profile.module.css'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-function Profile (props) {
-    
-   
-    
+function Profile (props) {  
     return (
-        <div >
-            
+        <div className={P.wrapperProfile} >
             <ProfileInfo/>
-            <MyPosts posts={props.State.posts} addPost={props.addPost}/>
-          
+            <MyPosts posts={props.MessagePage.posts} 
+                     dispatch={props.dispatch}
+                     />
         </div>
     )
 }

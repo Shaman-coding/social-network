@@ -5,7 +5,7 @@ import P from './ProfileInfo.module.css';
 const ProfileInfo = (props) => {
     return (
         <div >
-              <img src='https://i.ytimg.com/vi/qBNi4PlyPcQ/maxresdefault.jpg'/>
+              <img src='https://i.ytimg.com/vi/qBNi4PlyPcQ/maxresdefault.jpg' alt='other'/>
             
            
             <div className={P.descriptionBlock}>
