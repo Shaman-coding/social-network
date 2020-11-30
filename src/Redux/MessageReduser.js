@@ -1,16 +1,18 @@
 const ADD_NEW_MESSAGE_ACTION = "ADD-NEW-MESSAGE";
 
 const MessageReduser = (state, action) => {
-    if (action.type === ADD_NEW_MESSAGE_ACTION) {
-        let newMess = {
-            id: 8,
-            message: state.messages
-        };
-        state.MessageDate.push(newMess);
-
+   
+    switch (action.type) {
+        case ADD_NEW_MESSAGE_ACTION:
+            let newMess = {
+                id: 8,
+                message: action.messages
+            };
+            state.MessageDate.push(newMess);
+            return state
+        default:
+            return state;
     }
-
-    return state;
 }
 export let AddNewMessageAction = (text) => ({type: ADD_NEW_MESSAGE_ACTION, messages: text})
 export default MessageReduser;

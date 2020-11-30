@@ -58,10 +58,10 @@ let Store = {
 
     dispatch(action) {
         
-        this._State.MessagePage = MessageReduser(this._State.MessagePage, action);
-        this._State.DialogsPage = DialogsReduser(this._State.DialogsPage, action);
+        this._State.MessagePage = DialogsReduser(this._State.MessagePage, action);
+        this._State.DialogsPage = MessageReduser(this._State.DialogsPage, action);
         
-
+        
         this._callSubscriber(this._State);
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import P from './Dialogs.module.css';
 import Friendly from './Friendly/Friendly';
 import Message from './Message/Message';
-import {addPostActionCreator} from '../../Redux/DialogsReduser';
+import {AddNewMessageAction} from '../../Redux/MessageReduser';
 
 
 
@@ -13,7 +13,7 @@ const Dialogs = (props) => {
     
    let addMessage = () => { /* Создаю функцию  */
         let text = newAddMessage.current.value;  /* считывает значение  которое было введено пользователем  */
-        props.dispatch(addPostActionCreator(text) ) //text
+        props.dispatch(AddNewMessageAction(text) ) //text
    }
    //addPostActionCreator
     let frendlyMap = props.State.FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
