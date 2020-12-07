@@ -26,25 +26,24 @@ let defaultState = {
 };
 
 const MessageReduser = (state = defaultState, action) => {
-    
+
     switch (action.type) {
+
         case ADD_NEW_MESSAGE_ACTION:
-            let newMess = {
-                id: 8,
-                message: action.messages
-            };
+
+            let newMess = {  id: 8, message: state.newMessage  };
             state.MessageDate.push(newMess);
             state.newMessage='';
             return state
 
         case UPDATE_NEW_MESSAGE:
-            state.newMessage = action.newMessage;
+            state.newMessage = action.newMessageText;
             return state;
         default:
             return state;
     }
 }
-export let AddNewMessageAction = (text) => ({type: ADD_NEW_MESSAGE_ACTION, messages: text})
-export let UpdateNewMessage = (newMessage) => ({type: UPDATE_NEW_MESSAGE, newMessage: newMessage});
+export let AddNewMessageAction = () => ({type: ADD_NEW_MESSAGE_ACTION})
+export let UpdateNewMessage = (newMessage) => ({type: UPDATE_NEW_MESSAGE, newMessageText: newMessage});
 
 export default MessageReduser;

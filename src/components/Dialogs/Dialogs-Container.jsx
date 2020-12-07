@@ -5,17 +5,17 @@ import Dialogs from './Dialogs';
 
 const DialogsContainer = (props) => {
     
-    debugger;
+   
  
     let State = props.Store.getState().DialogsPage;
     
-   let addMessage = (text) => { 
-       props.Store.dispatch(AddNewMessageAction(text)) 
+   let addMessage = () => { 
+       props.Store.dispatch(AddNewMessageAction()) 
    }
 
    let onMessageChange = (NewTextMessage) => {
-       let messages = (UpdateNewMessage(NewTextMessage))
-       props.Store.dispatch(messages)
+       let newMessage = (UpdateNewMessage(NewTextMessage))
+       props.Store.dispatch(newMessage)
    }
  
    return <Dialogs FriendsData={State.FriendsData}

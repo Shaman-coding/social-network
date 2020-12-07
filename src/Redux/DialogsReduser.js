@@ -13,11 +13,8 @@ let defaultState = {
   
     switch (action.type) {
         case ADD_POST_ACTION:
-            let newPost = {
-                id: 3,
-                message: state.newPostText,
-                count: 0
-            }
+            
+            let newPost = { id: 3, message: state.newPostText,  count: 0 }
             state.posts.push(newPost);
             state.newPostText='';
             return state;
