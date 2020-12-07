@@ -7,7 +7,7 @@ import SiteBar from './SiteBar/SiteBar';
 
 
 function Navbar (props) {
-  
+
   let site = props.State.friend.map(s => <SiteBar name={s.name} />)  
 
     return (

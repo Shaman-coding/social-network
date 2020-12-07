@@ -2,23 +2,27 @@ import React from 'react';
 import P from './Dialogs.module.css';
 import Friendly from './Friendly/Friendly';
 import Message from './Message/Message';
-import {AddNewMessageAction} from '../../Redux/MessageReduser';
-
 
 
 
 const Dialogs = (props) => {
 
-    let newAddMessage = React.createRef();  /* Создаю ссылку для объекта  */
+   debugger;
     
-   let addMessage = () => { /* Создаю функцию  */
-        let text = newAddMessage.current.value;  /* считывает значение  которое было введено пользователем  */
-        props.dispatch(AddNewMessageAction(text) ) //text
+   let OnAddMessage = () => { 
+        props.addMessage(TextMessage) 
    }
-   //addPostActionCreator
-    let frendlyMap = props.State.FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
+
+  let TextMessage = React.createRef()
+
+   let UpdateNewMessage = () => {
+       let text = TextMessage.current.value;
+       props.onMessageChange(text)
+   }
+  
+    let frendlyMap = props.FriendsData.map(f => <Friendly name={f.name} id={f.id}/>)
     
-    let messageDate = props.State.MessageDate.map(m => <Message message={m.message} id={m.id}/>)
+    let messageDate = props.MessageDate.map(m => <Message message={m.message} id={m.id}/>)
     
 
 
@@ -35,8 +39,13 @@ const Dialogs = (props) => {
            </div>
 
             <div className={P.addMessage}>
-                <textarea ref= { newAddMessage }></textarea>  {/* Делаю ссылку textarea */}
-                <button onClick={ addMessage }>Send</button> {/* При нажатии на кнопку вызываю функцию = addMessage */}
+
+                <textarea  value={props.NewMessage}
+                           ref={TextMessage}
+                           onChange={UpdateNewMessage}         
+                />
+                
+                <button onClick = { OnAddMessage }>Send</button> 
             </div>
            
         </div>

@@ -1,5 +1,7 @@
+
 import DialogsReduser from "./DialogsReduser";
 import MessageReduser from "./MessageReduser";
+import siteBarReduser from "./siteBarReduser";
 
 
 
@@ -60,7 +62,7 @@ let Store = {
         
         this._State.MessagePage = DialogsReduser(this._State.MessagePage, action);
         this._State.DialogsPage = MessageReduser(this._State.DialogsPage, action);
-        
+        this._State.siteBar = siteBarReduser(this._State.siteBar, action);
         
         this._callSubscriber(this._State);
     }
@@ -74,16 +76,4 @@ let Store = {
 
 export default Store;
 window.Store = Store;
-
-
-
-
-
-
-
-
-
-
-
-
 

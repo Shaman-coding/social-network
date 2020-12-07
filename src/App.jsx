@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import { Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import DialogsContainer from './components/Dialogs/Dialogs-Container';
 
 
 function App (props) {
-  
+
 
   return (
 
@@ -20,8 +20,8 @@ function App (props) {
             <Navbar State={props.State.siteBar}/>
                 
             <div className='app-wrapper-content'>
-              <Route  path= '/dialogs'  render = { () => <Dialogs State={props.State.DialogsPage} dispatch={props.dispatch}   /> }/>
-              <Route  path= '/profile'  render = { () => <Profile dispatch={props.dispatch} MessagePage={props.State.MessagePage}  />}/>
+              <Route  path= '/dialogs'  render = { () => <DialogsContainer Store={props.Store} /> }/>
+              <Route  path= '/profile'  render = { () => <Profile Store={props.Store} />}/>
               <Route  path= '/News'     render = { () => <News />}/>
               <Route  path= '/Music'    render = { () => <Music />}/>
               <Route  path= '/Settings' render = { () => <Settings />}/>

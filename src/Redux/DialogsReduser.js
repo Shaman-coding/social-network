@@ -1,9 +1,16 @@
 const ADD_POST_ACTION = "ADD-POST";
 const UPDATE_NEW_POST_TEXT_ACTION = "UPDATE-NEW-POST-TEXT";
 
+let defaultState = {
+    posts:[
+        {id:1, message: 'I know props', count: 17},
+        {id:2, message: 'Good,bro', count: 28}
+    ],
+    newPostText:'it-kamasutra'
+};
 
- const DialogsReduser = (state, action) => {
-   
+ const DialogsReduser = (state = defaultState, action) => {
+  
     switch (action.type) {
         case ADD_POST_ACTION:
             let newPost = {
