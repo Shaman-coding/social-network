@@ -17,19 +17,17 @@ function App (props) {
 
         <div className="App-wrapper">
             <Header/>
-            <Navbar State={props.State.siteBar}/>
+           {/*  <Navbar state={props.state.siteBar}/> */}
                 
             <div className='app-wrapper-content'>
-              <Route  path= '/dialogs'  render = { () => <DialogsContainer Store={props.Store} /> }/>
-              <Route  path= '/profile'  render = { () => <Profile Store={props.Store} />}/>
+              <Route  path= '/dialogs'  render = { () => <DialogsContainer  /> }/>
+              <Route  path= '/profile'  render = { () => <Profile  />}/>
               <Route  path= '/News'     render = { () => <News />}/>
               <Route  path= '/Music'    render = { () => <Music />}/>
               <Route  path= '/Settings' render = { () => <Settings />}/>
             
             </div>
 
-            
-          
         </div>
    
     

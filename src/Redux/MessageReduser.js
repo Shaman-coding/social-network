@@ -22,7 +22,7 @@ let defaultState = {
         {id:7, message:'i do it'}
     ],
 
-    newMessage: "eeeeeeeeeeeee"
+    newMessage: "hi"
 };
 
 const MessageReduser = (state = defaultState, action) => {

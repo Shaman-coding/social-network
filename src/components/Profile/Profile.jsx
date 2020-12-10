@@ -7,7 +7,7 @@ function Profile (props) {
     return (
         <div className={P.wrapperProfile} >
             <ProfileInfo/>
-            <MyPostsContainer Store = {props.Store} /> 
+            <MyPostsContainer /> 
         </div>
     )
 }

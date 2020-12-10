@@ -10,14 +10,13 @@ const MyPosts =  (props) => {
   
   let postElement = props.posts.map(p => <Post message={p.message} count={p.count} id={p.id}/>)
 
-  let newPostElement = React.createRef();
 
   let OnAddPost = () => {
       props.addPost();
   }
   
-  let onPostChange = (event) => {
-    let text = event.target.value;
+  let onPostChange = (e) => {
+    let text = e.target.value;
     props.updateNewPostText(text)
 
   }
