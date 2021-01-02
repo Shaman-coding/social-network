@@ -12,15 +12,21 @@ let defaultState = {
  const DialogsReduser = (state = defaultState, action) => {
   
     switch (action.type) {
-        case ADD_POST_ACTION: 
-            let newPost = { id: 3, message: state.newPostText,  count: 0 }
-            state.posts.push(newPost);
-            state.newPostText='';
-            return state;
+        case ADD_POST_ACTION: {
+           
+            return {
+                ...state,
+                posts: [...state.posts, { id: 3, message: state.newPostText,  count: 0 }],
+                newPostText:''
+            };
+        }
 
-        case UPDATE_NEW_POST_TEXT_ACTION:
-            state.newPostText = action.newText;
-            return state;
+        case UPDATE_NEW_POST_TEXT_ACTION: {
+          return {
+              ...state,
+              newPostText: action.newText
+            };
+        }
         default:
             return state;
 

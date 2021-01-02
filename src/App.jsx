@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/Dialogs-Container';
-
+import UsersContainer from './components/Users/UsersContainer';
 
 function App (props) {
 
@@ -17,15 +17,15 @@ function App (props) {
 
         <div className="App-wrapper">
             <Header/>
-           {/*  <Navbar state={props.state.siteBar}/> */}
+            <Navbar/>
                 
-            <div className='app-wrapper-content'>
+            <div className= 'app-wrapper-content'>
               <Route  path= '/dialogs'  render = { () => <DialogsContainer  /> }/>
               <Route  path= '/profile'  render = { () => <Profile  />}/>
               <Route  path= '/News'     render = { () => <News />}/>
               <Route  path= '/Music'    render = { () => <Music />}/>
               <Route  path= '/Settings' render = { () => <Settings />}/>
-            
+              <Route path= '/Users' render = { () => <UsersContainer/>}/>
             </div>
 
         </div>

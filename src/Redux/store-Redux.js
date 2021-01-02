@@ -2,13 +2,17 @@ import {combineReducers, createStore} from "redux";
 import MessageReduser from "./MessageReduser";
 import DialogsReduser from "./DialogsReduser";
 import siteBarReduser from "./siteBarReduser";
+import UserFiendReduser from "./UserFindReduser";
 
 
-let redusers = combineReducers({
+let redusers = combineReducers ({
     DialogsPage: MessageReduser,
     MessagePage: DialogsReduser,
-    siteBar: siteBarReduser
+    siteBar: siteBarReduser,
+    UserFind: UserFiendReduser
+    
 });
 
 let store = createStore(redusers);
 export default store;
+

@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { addPostActionCreator, UpdateNewPostActionCreator } from '../../../Redux/DialogsReduser';
 import MyPosts from "./MyPosts";
 
-        let mapStateToProps = (state) => {
-            return {
-                posts: state.MessagePage.posts,
-                newPostText: state.MessagePage.newPostText
-            }
+    let mapStateToProps = (state) => {
+        return {
+            posts: state.MessagePage.posts,
+            newPostText: state.MessagePage.newPostText
+        }
         }
 
         let mapDispatchToProps = (dispatch) => {

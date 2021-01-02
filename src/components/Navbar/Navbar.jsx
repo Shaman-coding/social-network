@@ -6,9 +6,9 @@ import SiteBar from './SiteBar/SiteBar';
 
 
 
-function Navbar (props) {
+let  Navbar = (props) => {
 
-  let site = props.State.friend.map(s => <SiteBar name={s.name} />)  
+  /* let site = props.friend.map(s => <SiteBar name={s.name} />)   */
 
     return (
         <nav className={s.nav}>
@@ -31,6 +31,10 @@ function Navbar (props) {
               <NavLink to='/Settings' activeClassName={s.active}>Settings</NavLink>
             </div>
 
+            <div className={s.item}>
+              <NavLink to='/Users' activeClassName={s.active}>Users</NavLink>
+            </div>
+
 
 
            <div className={s.siteNav}>
@@ -40,15 +44,12 @@ function Navbar (props) {
               </div>
 
               <div className={s.site}>
-                {site}
+                {/* {site} */}
               </div>
 
               
            </div>
        </nav>
-
-       
-
 
       
     )

@@ -1,9 +1,10 @@
 import React from 'react';
+import P from './Settings.module.css'
 
 const Settings = (props) => {
     return(
-        <div>
-            Settings
+        <div >
+           Settings
         </div>
     )
 }

@@ -29,16 +29,21 @@ const MessageReduser = (state = defaultState, action) => {
 
     switch (action.type) {
 
-        case ADD_NEW_MESSAGE_ACTION:
+        case ADD_NEW_MESSAGE_ACTION: {
+            return {
+                ...state,
+                MessageDate: [...state.MessageDate, {  id: 8, message: state.newMessage  } ],
+                newMessage:''
 
-            let newMess = {  id: 8, message: state.newMessage  };
-            state.MessageDate.push(newMess);
-            state.newMessage='';
-            return state
-
-        case UPDATE_NEW_MESSAGE:
-            state.newMessage = action.newMessageText;
-            return state;
+            }
+        }
+        
+        case UPDATE_NEW_MESSAGE: {
+           return {
+                ...state,
+                newMessage: action.newMessageText
+            };
+        }
         default:
             return state;
     }
