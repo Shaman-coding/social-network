@@ -1,33 +1,38 @@
 import React from 'react';
 import U from './Users.module.css';
-import * as axios from 'axios';
 import human  from '../../assets/imeges/human.jpg';
+import {NavLink} from 'react-router-dom';
 
 
 
-   export class Users extends React.Component {
-            constructor(props) {
-                super(props)
-                axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-                props.setUsers(response.data.items)
-            });
+export let Users = (props) => {
+   
+        let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++) {
+          pages.push(i)
         }
+        return (
+            <div>
 
-        render() {
-            return (
                 <div>
-        
-                
-                   {this.props.users.map(u => <div key = {u.id}  > 
-        
+
+                    {pages.map(p => {
+                        return <span className={props.currentPage === p && U.selecte }
+                                     onClick={() => {props.onPageChanged(p) } }>{ p } </span>
+                    })}
+
+                    </div>
+
+                   {props.users.map(u => <div key = {u.id}>
                     <span>
                         <div>
-                            <img className={U.icons}  src={u.photos.small != null ? u.photos.small : human}/> 
+                          <NavLink to={'/profile/' + u.id}> <img className={U.icons} src={u.photos.small != null ? u.photos.small : human}/> </NavLink>
                         </div>
                         <div>
                            { u.following
-                           ?  <button onClick={ () => {this.props.unfollow(u.id)}}>Unfollow</button> 
-                           :  <button onClick={ () => {this.props.follow(u.id)}}>Follow</button>}
+                           ?  <button onClick={ () => {props.unfollow(u.id)}}>Unfollow</button> 
+                           :  <button onClick={ () => {props.follow(u.id)}}>Follow</button>}
                         </div>
                     </span>
         
@@ -48,7 +53,7 @@ import human  from '../../assets/imeges/human.jpg';
             )
         
         }
-    } 
+    
    
 
 

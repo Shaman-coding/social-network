@@ -1,14 +1,16 @@
 const FOLLOWER = 'FOLLOWER';
 const UNFOLLOWER = 'UNFOLLOWER';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS = 'SET_TOTAL_USERS';
+const SET_TOGGLE = 'SET_TOGGLE';
 
 let defaultState = {
-    users: [
-       /*  {id: 1, following: true,  icons: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/768px-Circle-icons-camera.svg.png', name:'Kirill', status: 'it new time', locations: {countries: 'Russia', city: 'Moscow'}},
-        {id: 2, following: false,  icons: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/768px-Circle-icons-camera.svg.png', name:'Maxim', status: "i'm very rich", locations: {countries: 'Belarus', city: 'Minsk'}},
-        {id: 3, following: false,  icons: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/768px-Circle-icons-camera.svg.png', name:'Igor', status: 'kiss me', locations: {countries: 'USA', city: 'New York'}},
-        {id: 4, following: true,  icons: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/768px-Circle-icons-camera.svg.png', name:'Slava', status: 'he say...', locations: {countries: 'Ukraine', city: 'Kiev'}} */
-    ]
+    users: [],
+    pageSize: 5,
+    totalUsers: 0,
+    currentPage: 1,
+    isFetching: false
 }
 
 
@@ -25,9 +27,8 @@ let UserFindReduser = (state = defaultState, action) => {
                    return u;
                })
            }
-
-           case UNFOLLOWER:
-               return {
+        case UNFOLLOWER:
+            return {
                    ...state,
                    users: state.users.map(u => {
                        if (u.id === action.userId){
@@ -37,11 +38,18 @@ let UserFindReduser = (state = defaultState, action) => {
                    })
                }
 
-               case SET_USERS:
-                   return {...state, users: action.users}
+        case SET_USERS:
+             return {...state, users: action.users}
 
-                default:
-                    return state
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage}
+
+        case SET_TOTAL_USERS:
+            return {...state, totalUsers: action.totalUsers}
+        case SET_TOGGLE:
+            return{...state, isFetching: action.toggle }
+        default:
+            return state
     }
 }
 
@@ -49,6 +57,9 @@ export default UserFindReduser;
 
 
 
-export const FollowerAC = (userId) => ({type: FOLLOWER, userId})
-export const UnfollowerAC = (userId) => ({type: UNFOLLOWER, userId})
-export const Set_UsersAC = (users) => ({type: SET_USERS, users})
+export const follow = (userId) => ({type: FOLLOWER, userId})
+export const unfollow = (userId) => ({type: UNFOLLOWER, userId})
+export const setUsers = (users) => ({type: SET_USERS, users})
+export const SetCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const TotalUsers = (totalUsers) => ({type: SET_TOTAL_USERS, totalUsers})
+export const SetToggle = (toggle) => ({type: SET_TOGGLE, toggle})
