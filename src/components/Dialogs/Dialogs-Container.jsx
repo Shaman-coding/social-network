@@ -11,20 +11,7 @@ import {connect} from 'react-redux';
     }    
   }
 
-  let mapDispatchToProps = (dispatch) => {
-    return {
-      addMessage: () => {
-        dispatch(AddNewMessageAction()) 
-      },
-
-      onMessageChange: (NewTextMessage) => {
-        let newMessage = (UpdateNewMessage(NewTextMessage))
-        dispatch(newMessage)
-      } 
-
-    }
   
-  }
-  const DialogsContainer = connect(mapStateToProps, mapDispatchToProps) (Dialogs);
+  const DialogsContainer = connect(mapStateToProps, {AddNewMessageAction, UpdateNewMessage}) (Dialogs);
 
 export default DialogsContainer;

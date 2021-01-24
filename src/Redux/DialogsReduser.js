@@ -9,7 +9,6 @@ let defaultState = {
     ],
     newPostText:'it-kamasutra',
     Person: null
-
 };
 
     const DialogsReduser = (state = defaultState, action) => {

@@ -3,9 +3,26 @@
 .header img {
     width: 100px;
   }
-  
-  
-  .header {
+.loginWrapper {
     background: black;
     grid-area: h;
   }
+  
+ .wrapperLoginAuth {
+   color: white;
+ }
+ .loginWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-right: 1em;
+ }
+
+ .wrapperLoginAuth {
+   float: right;
+ }
+
+
+ .wrapperLoginAuth img {
+   width: 50px;
+ }

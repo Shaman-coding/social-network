@@ -2,6 +2,7 @@ import React from 'react';
 import U from './Users.module.css';
 import human  from '../../assets/imeges/human.jpg';
 import {NavLink} from 'react-router-dom';
+import {Unfollow, Follow} from '../../Redux/UserFindReduser';
 
 
 
@@ -31,8 +32,16 @@ export let Users = (props) => {
                         </div>
                         <div>
                            { u.following
-                           ?  <button onClick={ () => {props.unfollow(u.id)}}>Unfollow</button> 
-                           :  <button onClick={ () => {props.follow(u.id)}}>Follow</button>}
+                            ?  <button disabled={props.isDisable.some(id => id === u.id)} onClick={ () => {
+                              Unfollow(u.id)
+                           }
+                               }>Unfollow</button> 
+
+                            :  <button disabled={props.isDisable
+                            .some(id => id === u.id)} onClick={ () => {
+                              Follow(u.id)
+                        }
+                            }>Follow</button>}
                         </div>
                     </span>
         

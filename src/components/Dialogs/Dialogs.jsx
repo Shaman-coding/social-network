@@ -12,12 +12,12 @@ const Dialogs = (props) => {
     let messageDate = props.MessageDate.map(m => <Message message={m.message} id={m.id}/>)
 
    let OnAddMessage = () => { 
-        props.addMessage() 
+        props.AddNewMessageAction() 
    }
 
    let UpdateNewMessage = (e) => {
        let text = e.target.value;
-       props.onMessageChange(text)
+       props.UpdateNewMessage(text)
    }
   
     return (

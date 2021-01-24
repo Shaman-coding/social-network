@@ -4,19 +4,16 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {setPerson} from '../../Redux/DialogsReduser';
+import {ProfileApi} from '../../API/api';
 
 class ProfileContainer extends React.Component {
 
     componentDidMount () {   
         let userId = this.props.match.params.userId; 
-        axios.get('https://social-network.samuraijs.com/api/1.0/profile/' + userId )
-        .then(Response => {
-            this.props.setPerson(Response.data);
+        ProfileApi(userId)
+        .then(data => {
+            this.props.setPerson(data);
         });
-        
-           
-       
-        
     }
 
     render () {
@@ -27,9 +24,6 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => ({
     Person: state.MessagePage.Person
 })
-  
-
-
 
 let WithRouterURLComponent = withRouter(ProfileContainer)
 

@@ -11,10 +11,8 @@ const ProfileInfo = (props) => {
     return (
         <div>
               <img src='https://i.ytimg.com/vi/qBNi4PlyPcQ/maxresdefault.jpg' alt='other'/>
-            
-           
             <div className={P.descriptionBlock}>
-            <img src={props.Person.photos.small}/> <br/>
+            <img src={props.Person.photos.small}/><br/>
             {props.Person.fullName} <br/>
             {props.Person.aboutMe}
                <div>
